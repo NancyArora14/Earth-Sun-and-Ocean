@@ -1,0 +1,69 @@
+<style>
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap; /* Ensures everything stays in one line */
+    box-sizing: border-box;
+  }
+
+  .marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0); /* Start off screen to the right */
+    }
+    to {
+      transform: translateX(-50%); /* End off screen to the left */
+    }
+  }
+
+  .marquee-item {
+    display: inline-block;
+    padding: 0 50px; /* Space between items */
+  }
+</style>
+
+<div class="{{ section.settings.cst_class }} marquee">
+  <div class="marquee-content">
+    {% for i in (1..3) %}
+      <!-- First Loop of Items -->
+      <div class="marquee-item">
+        <strong>Enjoy an Exclusive 10% Off When You Pre-Order! </strong>
+        This limited offer is a great opportunity to invest in your skin. Don't miss out! 
+      </div>
+      <div class="marquee-item">
+        🌴☀️🌊
+      </div>
+
+      <div class="marquee-item">
+        <strong>Get 10% Off Only When You Pre-Order! </strong>
+        No Code Needed 
+      </div>
+      <div class="marquee-item">
+        🌴☀️🌊
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "marquee",
+    "settings": [
+      {
+      "type": "text",
+      "id":"cst_class",
+      "label":"Custom Class"
+    },
+    ],
+    "presets": [
+      {
+        "name": "marquee"
+      }
+    ]
+  }
+{% endschema %}

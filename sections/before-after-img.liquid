@@ -1,0 +1,205 @@
+{% schema %}
+{
+  "name": "Before and After Slider",
+  "settings": [
+    {
+      "id": "before_image",
+      "type": "image_picker",
+      "label": "Before Image"
+    },
+    {
+      "id": "after_image",
+      "type": "image_picker",
+      "label": "After Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before and After Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% assign unique_id = 'ba_slider_' | append: section.id %}
+
+<div class="container after-before-sec" id="slider-container-{{ unique_id }}">
+    <img src="{{ section.settings.after_image |img_url: '368X368' }}" alt="After" class="img-after" loading="lazy">
+    <img src="{{ section.settings.before_image | img_url: '368X368'  }}" alt="Before" class="img-before" loading="lazy">
+    <div class="slider" id="slider-{{ unique_id }}">
+        <span class="slider-number">123</span>
+    </div>
+    <div class="label-before">Before</div>
+    <div class="label-after">After</div>
+</div>
+
+<style>
+  .container.after-before-sec {
+    width: 100%;
+    max-width: 1240px;
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+    margin: 50px auto;
+  }
+
+  .container.after-before-sec img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .container.after-before-sec img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img-before {
+    clip: rect(0, 50%, auto, 0); 
+    z-index: 1;
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%; 
+    z-index: 3; 
+    background-color: #fff;
+    width: 5px; 
+    cursor: grab;
+    transition: background-color 0.3s ease;
+  }
+
+  .slider:active {
+    cursor: grabbing; 
+  }
+
+  .slider:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+.label-before {
+    font-size: 32px;
+    font-family: Playfair Display;
+    font-weight: 400;
+}
+
+.label-after {
+    font-size: 32px;
+    font-family: Playfair Display;
+    font-weight: 400;
+}
+.slider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -21px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    transform: translateY(-50%) rotate(90deg);
+    z-index: 4;
+    background-image: url(https://cdn.shopify.com/s/files/1/0596/0486/0998/files/menu_2.svg?v=1729782593);
+    background-color: #fff;
+    padding: 10px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+} 
+
+  .slider:hover::before {
+    background-color: #fff;
+  }
+
+  
+  .slider-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: black;
+    opacity: 0; 
+  }
+
+  
+  .label-before,
+  .label-after {
+    position: absolute;
+    top: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 5; 
+  }
+
+  .label-before {
+    left: 20px; 
+  }
+
+  .label-after {
+    right: 20px; 
+  }
+  @media(max-width:767px){
+        .container.after-before-sec {
+            height: 500px;
+
+        }
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('slider-{{ unique_id }}');
+    const container = document.getElementById('slider-container-{{ unique_id }}');
+    const beforeImage = container.querySelector('.img-before');
+
+    let isDragging = false;
+
+    slider.addEventListener('mousedown', startDrag);
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('mousemove', dragSlider);
+
+    slider.addEventListener('touchstart', startDrag);
+    document.addEventListener('touchend', stopDrag);
+    document.addEventListener('touchmove', dragSlider);
+
+    function startDrag(e) {
+        e.preventDefault();
+        isDragging = true;
+        slider.style.cursor = 'grabbing'; // Set to grabbing when dragging starts
+    }
+
+    function stopDrag() {
+        isDragging = false;
+        slider.style.cursor = 'grab'; // Revert to grab when dragging stops
+    }
+
+    function dragSlider(e) {
+        if (!isDragging) return;
+
+        let positionX;
+        const containerRect = container.getBoundingClientRect();
+
+        if (e.type === 'mousemove') {
+            positionX = e.clientX - containerRect.left;
+        } else if (e.type === 'touchmove') {
+            positionX = e.touches[0].clientX - containerRect.left;
+        }
+
+        if (positionX < 0) positionX = 0;
+        if (positionX > containerRect.width) positionX = containerRect.width;
+
+        slider.style.left = positionX + 'px';
+
+        beforeImage.style.clip = `rect(0, ${positionX}px, auto, 0)`;
+    }
+
+    // Initial state - half before, half after
+    const initialPosition = container.offsetWidth / 2;
+    slider.style.left = initialPosition + 'px';
+    beforeImage.style.clip = `rect(0, ${initialPosition}px, auto, 0)`;
+});
+</script>

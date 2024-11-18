@@ -1,0 +1,156 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<style>
+  .testimonial-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+
+  .testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .testimonial-item {
+    padding: 20px;
+  }
+
+  .stars {
+    color: #f39c12; /* Gold color for stars */
+    margin-bottom: 10px;
+  }
+
+  .stars .star {
+    font-size: 20px;
+  }
+
+  .review-text {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .user-name {
+    font-weight: bold;
+  }
+</style>
+
+<div class="{{ section.settings.cst_class }} testimonial-section section-{{ section.id }}">
+  <div class='page-width'>
+  <h2>{{ section.settings.main_heading }}</h2>
+  
+  <div class="testimonial-slider">
+    {% for block in section.blocks %}
+      <div> 
+      <div class="testimonial-item">
+        <div class="stars">
+          {% assign rating = block.settings.rating | plus: 0 %}
+          {% for i in (1..5) %}
+            <span class="star">{% if i <= rating %}★{% else %}☆{% endif %}</span>
+          {% endfor %}
+        </div>
+        <div class="review-text">{{ block.settings.review }}</div>
+        <div class="user-name">{{ block.settings.user_name }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+ 
+    $('.testimonial-slider').slick({
+  centerMode: true,
+ centerPadding: '10px',
+  slidesToShow: 3,
+  speed: 500,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  responsive: [
+    {
+      breakpoint: 771,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '10px',
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '10px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+  });
+  
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials Section",
+  "settings": [
+    {
+      "type": "text",
+      "id":"cst_class",
+      "label":"Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "What Our Customers Say"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "review",
+          "label": "Review",
+          "default": "This is a great product!"
+        },
+        {
+          "type": "text",
+          "id": "user_name",
+          "label": "User Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "label": "Rating",
+          "options": [
+            { "value": "1", "label": "1 Star" },
+            { "value": "2", "label": "2 Stars" },
+            { "value": "3", "label": "3 Stars" },
+            { "value": "4", "label": "4 Stars" },
+            { "value": "5", "label": "5 Stars" }
+          ],
+          "default": "5"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

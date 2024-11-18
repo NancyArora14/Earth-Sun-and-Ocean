@@ -1,0 +1,211 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<style>
+  .testimonial-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+
+  .testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .testimonial-item {
+    padding: 20px;
+  }
+
+  .stars {
+    color: #f39c12; /* Gold color for stars */
+    margin-bottom: 10px;
+  }
+
+  .stars .star {
+    font-size: 20px;
+  }
+
+  .review-text {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .user-name {
+    font-weight: bold;
+  }
+  .cst-product-testimonial .slick-list {
+    padding:0 15% 0 0 !important;
+}
+</style>
+
+<div class="{{ section.settings.cst_class }} testimonial-section section-{{ section.id }}">
+    <div class='page-width'>
+      
+        <h2 class="test-heading">{{ section.settings.main_heading }}</h2>
+        <p class="test-subheading"> {{ section.settings.subheading }}</p>
+        <div class="testimonial-slider">
+            {% for block in section.blocks %}
+            <div>
+                <div class="testimonial-item author-details">
+                    {% if block.settings.author_image %}
+                    <img src="{{ block.settings.author_image | img_url: '500x500' }}"
+                        alt="{{ block.settings.author_name }}" class="author-image">
+                    {% endif %}
+                    <div class="user-details">
+                        <div class="user-name"> {{ block.settings.author_name}}</div>
+                        <div class="user-bio"> {{ block.settings.author_bio}}</div>
+                    </div>
+
+                    <div class="stars">
+                        {% assign rating = block.settings.rating | plus: 0 %}
+                        {% for i in (1..5) %}
+                        <span class="star">{% if i <= rating %}★{% else %}☆{% endif %}</span>
+                                {% endfor %}
+                    </div>
+                    <div class="review-text">{{ block.settings.review }}</div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+  //   $('.testimonial-slider').slick({
+  //     dots: true,
+  //     infinite: true,
+  //     speed: 500,
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     autoplay: true,
+  //     autoplaySpeed: 3000,
+  //     responsive: {
+  //   0: {
+  //     items: 1
+  //   },
+
+  //   600: {
+  //     items: 3
+  //   },
+
+  //   1024: {
+  //     items: 3
+  //   },
+
+  //   1366: {
+  //     items: 3
+  //   }
+  // }
+  //   });
+
+    $('.testimonial-slider').slick({
+  centerMode: false,
+
+  slidesToShow: 3,
+  speed: 500,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  responsive: [
+    {
+      breakpoint: 991,
+      settings: {
+        arrows: false,
+        centerMode: true,
+      
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 575,
+      settings: {
+        arrows: false,
+        centerMode: false,
+        centerPadding: '0px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+  });
+  
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials with Image",
+  "settings": [
+    {
+      "type": "text",
+      "id":"cst_class",
+      "label":"Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "Main Heading"
+    },
+    {
+       "type": "richtext",
+       "id": "subheading",          
+       "label": "Descriptions"
+        }   
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+       {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author Image",
+         
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name",
+          "default": "John Doe"
+        },
+         {
+          "type": "text",
+          "id": "author_bio",
+          "label": "Author Bio",
+          "default": "Influencer"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "label": "Rating",
+          "options": [
+            { "value": "1", "label": "1 Star" },
+            { "value": "2", "label": "2 Stars" },
+            { "value": "3", "label": "3 Stars" },
+            { "value": "4", "label": "4 Stars" },
+            { "value": "5", "label": "5 Stars" }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Review",
+          "default": "This is a great product!"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials with Image",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

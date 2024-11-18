@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_1.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_1.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Black.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Black.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-BlackItalic.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-BlackItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Italic.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'false';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_2.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_2.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-BoldItalic.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_3.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_3.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'false';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_4.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_4.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'false';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_5.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_5.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'false';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_6.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_6.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'false';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_7.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_7.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Bold.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'false';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_8.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_8.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_9.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_9.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_10.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_10.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_11.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_11.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_12.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/false_12.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Medium.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-LightItalic.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Light.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/Satoshi-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}

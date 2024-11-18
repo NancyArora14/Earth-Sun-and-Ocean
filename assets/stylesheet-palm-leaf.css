@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Palm Leaf';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Palm Leaf';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic_1.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic_1.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic_1.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Palm Leaf';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic_2.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic_2.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Italic_2.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Palm Leaf';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Palm Leaf';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular_1.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular_1.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular_1.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Palm Leaf';
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular_2.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular_2.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0596/0486/0998/files/PalmLeaf-Regular_2.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
